@@ -1,0 +1,31 @@
+<div class="grid" *ngIf="rows$ | async as rows">
+  <div class="grid-container">
+    <div *ngFor="let title of headers" class="grid-header">{{ title }}</div>
+  </div>
+
+  <div class="grid-container">
+    <div *ngFor="let row of rows; trackBy: rowByInt" class="grid-row">
+      <div>
+        <span>{{ row.id }}</span>
+      </div>
+      <div>
+        <span>{{ row.int }}</span>
+      </div>
+      <div>
+        <span>{{ row.float }}</span>
+      </div>
+      <div>
+        <!-- Also can use directive to hightlight span -->
+        <span [style.background-color]="row.color">{{ row.color }}</span>
+      </div>
+      <div class="child">
+        <div *ngFor="let item of row.child | keyvalue;">
+          <span>{{ item.key }}</span>
+          <span [style.background-color]="item.value">{{ item.value }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Good idea to add some spinner while waiting grid data -->

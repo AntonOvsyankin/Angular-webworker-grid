@@ -1,0 +1,20 @@
+:host {
+  width: 100%;
+
+  .panel {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border: 1px solid #000000;
+    padding: 20px;
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+
+      & > label {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

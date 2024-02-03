@@ -1,0 +1,16 @@
+<div class="panel" [formGroup]="formGroup">
+  <div class="panel-block">
+    <label> Timer, ms </label>
+    <input formControlName="ms"/>
+  </div>
+
+  <div class="panel-block">
+    <label> Array, size </label>
+    <input formControlName="size"/>
+  </div>
+<!-- Additional array ids should take a model [id1,id2,id3,id4,....] -->
+  <div class="panel-block">
+    <label> Additional array ids</label>
+    <input formControlName="additionalIDs"/>
+  </div>
+</div>
